@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour
             for (int i = 0; i < _spawnPoints.Count; i++)
             {
                 SpawnPoint spawnPoint = _spawnPoints[i];
-                Coin coin = Instantiate(spawnPoint.GetCoin(), spawnPoint.transform.position, Quaternion.identity);
+                spawnPoint.CreateCoin();
             }
         }
     }

@@ -374,7 +374,7 @@ MonoBehaviour:
   _moveSpots:
   - {fileID: 1443923284}
   - {fileID: 120472310}
-  _speed: 4
+  _speed: 10
 --- !u!4 &999441214
 Transform:
   m_ObjectHideFlags: 0
@@ -384,7 +384,7 @@ Transform:
   m_GameObject: {fileID: 999441210}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.41, y: -2.524, z: 0}
+  m_LocalPosition: {x: -8.41, y: -2.42, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 1155008009}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c685384467de2489f82639d787b319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coin: {fileID: 1230839554826584913, guid: ac929fab2fe411841827ccc98f46928d, type: 3}
+  _coinPrefab: {fileID: 1230839554826584913, guid: ac929fab2fe411841827ccc98f46928d, type: 3}
 --- !u!1 &1233910575
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c685384467de2489f82639d787b319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coin: {fileID: 1230839554826584913, guid: ac929fab2fe411841827ccc98f46928d, type: 3}
+  _coinPrefab: {fileID: 1230839554826584913, guid: ac929fab2fe411841827ccc98f46928d, type: 3}
 --- !u!1 &1306046604
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c685384467de2489f82639d787b319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coin: {fileID: 1230839554826584913, guid: ac929fab2fe411841827ccc98f46928d, type: 3}
+  _coinPrefab: {fileID: 1230839554826584913, guid: ac929fab2fe411841827ccc98f46928d, type: 3}
 --- !u!1 &1443923283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ab178fe0e4cd44f8fe2bc5acd663d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speedOfMovement: 10
   _jumpForce: 500
 --- !u!95 &1797644734
 Animator:

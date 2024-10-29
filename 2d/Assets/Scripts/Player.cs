@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    [SerializeField] private float _speedOfMovement;
     [SerializeField] private float _jumpForce;
 
     private bool _isGrounded;
@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     private Animator _animator;
     private bool _turnedToTheRight = true;
 
-    private void Start()
+    private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -20,25 +20,22 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Floor"))
-        {
-            _isGrounded = true;
-        }
+        _isGrounded = true;
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Floor"))
-        {
-            _isGrounded = false;
-        }
+        _isGrounded = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        float movement = Input.GetAxis("Horizontal");
+        string nameOfAxis = "Horizontal";
+        KeyCode jumpKey = KeyCode.Space;
+        float movement = Input.GetAxis(nameOfAxis);
+
         _animator.SetFloat("speed",Mathf.Abs(movement));
-        _rigidBody.velocity = new Vector2(movement*_speed, _rigidBody.velocity.y);
+        _rigidBody.velocity = new Vector2(movement*_speedOfMovement, _rigidBody.velocity.y);
 
         if (_turnedToTheRight == false && movement > 0)
         {
@@ -49,7 +46,7 @@ public class Player : MonoBehaviour
             Flip();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
+        if (Input.GetKeyDown(jumpKey) && _isGrounded)
         {
             _rigidBody.AddForce(new Vector2(_rigidBody.velocity.x, _jumpForce));
         }
@@ -57,9 +54,10 @@ public class Player : MonoBehaviour
 
     private void Flip()
     {
+        int rotationDegrees = 180;
         _turnedToTheRight = !_turnedToTheRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        Vector2 rotate = transform.eulerAngles;
+        rotate.y += rotationDegrees;
+        transform.rotation = Quaternion.Euler(rotate);
     }
 }

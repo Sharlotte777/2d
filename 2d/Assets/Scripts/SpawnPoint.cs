@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    [SerializeField] private Coin _coin;
+    [SerializeField] private Coin _coinPrefab;
 
-    public Coin GetCoin()
+    public void CreateCoin()
     {
-        return _coin;
+        Instantiate(_coinPrefab, transform.position, Quaternion.identity);
     }
 }
