@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField][Range(1, 10)] private float _timeToSpawn = 2f;
+    [SerializeField][Range(1, 10)] private float _timeToSpawn = 5f;
     [SerializeField] private List<SpawnPoint> _spawnPoints;
 
     private void Start()
